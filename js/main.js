@@ -129,7 +129,7 @@ const minusButtonHandler = (i) => {
 //!Silme Butonu Fonksiyonu
 
 const removeButtonHandler = (i) => {
-
+  
   //Ürünü 200ms gecikmeyle sil
   setTimeout(() => {
     cartItem[i].remove();
