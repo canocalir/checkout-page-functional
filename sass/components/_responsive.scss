@@ -1,5 +1,6 @@
 @include media-xsm {
   .main-container {
+    width: 100%;
     .mid-container {
       flex-direction: column;
       .left-container {
@@ -78,7 +79,7 @@
         .cart-item {
           width: 50vw;
           img {
-            @include Image(30vw);
+            @include Image(20vw);
           }
           .price {
             .counter {
@@ -105,9 +106,11 @@
         }
       }
       .right-container {
-        width: 50%;
+        display: flex;
+        width: 35%;
         .cart-item {
           width: 30vw;
+          gap: 1rem;
           img {
             @include Image(10vw);
           }
@@ -135,11 +138,13 @@
         }
       }
       .right-container {
-        width: 20%;
+        display: flex;
+        width: 30%;
         .cart-item {
           width: 100%;
+          gap: 1rem;
           img {
-            @include Image(6vw);
+            @include Image(10vw);
           }
           .price {
             .counter {
