@@ -1,0 +1,28 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+//abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+//base
+@import 'base/reset';
+
+//components
+@import 'components/header';
+@import 'components/cart';
+@import 'components/shipping-form';
+@import 'components/button';
+@import 'components/price-total';
+@import 'components/input-field';
+@import 'components/cart-item';
+
+//pages
+@import 'containers/containers';
+
+//responsive
+@import 'components/responsive';
+
+body {
+    font-family: $font-family;
+}

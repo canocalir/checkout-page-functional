@@ -1,0 +1,13 @@
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  .country {
+    width: 25vh;
+  }
+}
+
+.form-group {
+    margin-top: $regular-margin;
+    width: 100%;
+}

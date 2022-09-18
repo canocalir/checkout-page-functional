@@ -1,0 +1,11 @@
+.cart {
+  background-color: $cart-background;
+  padding: 2rem;
+  border-radius: $regular-border-size;
+  
+
+  h2 {
+    font-size: $regular-font-size;
+    color: $heading-color;
+  }
+}

@@ -1,0 +1,20 @@
+.input-field {
+    position: relative;
+    i {
+      position: absolute;
+      color: $font-color;
+      font-size: $regular-font-size;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 2%;
+    }
+    input,
+    select {
+      border: 1px solid $font-color;
+      padding: 0.5rem 0.4rem 0.5rem 2rem;
+      color: $font-color;
+      font-size: $regular-font-size;
+      border-radius: 0.3rem;
+      width: 100%;
+    }
+  }

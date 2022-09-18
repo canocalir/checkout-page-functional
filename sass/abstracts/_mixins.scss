@@ -1,0 +1,41 @@
+@mixin singleProduct($width) {
+    width: $width;
+    border: $thin-border;
+    text-align: center;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+}
+
+@mixin Image($width) {
+    width: $width;
+}
+
+@mixin media-xsm {
+    @media screen and (min-width: 0px) {
+      @content;
+    }
+  }
+  
+  @mixin media-sm {
+    @media screen and (min-width: 576px) {
+      @content;
+    }
+  }
+  
+  @mixin media-md {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin media-lg {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  }
+  
+  @mixin media-xl {
+    @media screen and  (min-width: 1600px) {
+      @content;
+    }
+  }

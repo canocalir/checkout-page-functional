@@ -1,0 +1,47 @@
+.cart-item {
+  display: flex;
+  width: 25vw;
+  margin-top: 10px;
+  img {
+    @include Image(6vw);
+    border-radius: $regular-border-size;
+  }
+  .price {
+    padding: 0.5rem;
+    .overline {
+      text-decoration: line-through;
+      color: #4e5150;
+      font-size: $regular-font-size;
+    }
+    .orange {
+      font-size: 1.4rem;
+      color: #f2994a;
+      font-weight: $bold-font;
+    }
+    .counter {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.2rem;
+      @include singleProduct(6vw);
+      button {
+        border: none;
+        background-color: lightgrey;
+        padding: 0.2rem;
+        border-radius: 0.1rem;
+        &:hover {
+          background-color: grey;
+          cursor: pointer;
+        }
+      }
+      .number {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+  
+  .p-total {
+    margin-top: $regular-margin;
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,153 @@
+@include media-xsm {
+  .main-container {
+    .mid-container {
+      flex-direction: column;
+      .left-container {
+        width: 100%;
+        .button {
+          text-align: center;
+          button {
+            min-width: 50%;
+          }
+        }
+      }
+      .right-container {
+        width: 100%;
+        .cart-item {
+          width: 30vw;
+          img {
+            @include Image(30vw);
+          }
+          .price {
+            .counter {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-sm {
+  .main-container {
+    .mid-container {
+      flex-direction: column;
+      .left-container {
+        width: 100%;
+        .button {
+          text-align: center;
+          button {
+            min-width: 50%;
+          }
+        }
+      }
+      .right-container {
+        width: 100%;
+        .cart-item {
+          width: 30vw;
+          img {
+            @include Image(30vw);
+          }
+          .price {
+            .counter {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-md {
+  .main-container {
+    .mid-container {
+      flex-direction: column;
+      .left-container {
+        width: 100%;
+        .button {
+          text-align: center;
+          button {
+            min-width: 50%;
+          }
+        }
+      }
+      .right-container {
+        width: 100%;
+        .cart-item {
+          width: 50vw;
+          img {
+            @include Image(30vw);
+          }
+          .price {
+            .counter {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-lg {
+  .main-container {
+    .mid-container {
+      flex-direction: row;
+      .left-container {
+        width: 50%;
+        .button {
+          text-align: center;
+          button {
+            min-width: 50%;
+          }
+        }
+      }
+      .right-container {
+        width: 50%;
+        .cart-item {
+          width: 30vw;
+          img {
+            @include Image(10vw);
+          }
+          .price {
+            .counter {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-xl {
+  .main-container {
+    .mid-container {
+      .left-container {
+        width: 30%;
+        .button {
+          text-align: center;
+          button {
+            min-width: 50%;
+          }
+        }
+      }
+      .right-container {
+        width: 20%;
+        .cart-item {
+          width: 100%;
+          img {
+            @include Image(6vw);
+          }
+          .price {
+            .counter {
+              width: 6vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
