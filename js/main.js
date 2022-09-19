@@ -10,6 +10,7 @@ const numberCount = document.querySelectorAll(".number");
 const cart = document.querySelector(".cart");
 const itemTotal = document.querySelectorAll(".item-total");
 const totalSection = document.querySelector("#total-section");
+const loaderAnimation = document.querySelector('.loader')
 
 //! Toplam Bölümü Seçicileri - Total Section Selectors
 const subTotal = document.querySelector("#subtotal");
@@ -123,8 +124,12 @@ const minusButtonHandler = (i) => {
   calculateNegativePrices(i);
 
   //Eğer 0 adet ise ürünü 200ms gecikmeyle sil
-  nextCount < 1 ? removeButtonHandler(i) : null;
-};
+  nextCount < 1 
+  ?setTimeout(() => {
+    cartItem[i].remove();
+  }, 200)
+   : null
+}
 
 //!Silme Butonu Fonksiyonu
 
@@ -136,9 +141,7 @@ const removeButtonHandler = (i) => {
   }, 200);
 
   //Sepet Toplam Bölümü Fiyatlarını Güncelle
-  subTotalPrice -= cartItems[i].sale;
-  calculateSubTotalTaxShipping();
-  calculatePricesHandler(i);
+  calculateNegativePrices(i)
 };
 
 //!Boş Sepet Uyarısı Fonksiyonu
@@ -149,6 +152,49 @@ const emptyCartHandler = () => {
   emptyCart.innerHTML = "<h2>Your cart is empty</h2>";
   cart.appendChild(emptyCart);
 };
+
+const loadingHandler = () => {
+  //*Loading animasyonu göster
+  cartItem.forEach((item) => {
+    item.classList.add("remove-items")
+  },
+  totalSection.classList.add("remove-items"),
+  )
+
+  //*2 saniye sonra loading animasyonunu kaldır
+  setInterval(() => {
+    loaderAnimation.remove();
+    cartItem.forEach((item) => {
+      item.classList.remove("remove-items")
+    },
+    totalSection.classList.remove("remove-items"),
+    )
+  },2000)
+}
+
+//! Dummy Data Fonksiyonu
+
+const dummyDataHandler = () => {
+    loadingHandler()
+    //Ürün bazlı Toplam fiyatları ilk yüklemede getir
+  itemTotal.forEach((item, index) => {
+    item.innerText = cartItems[index].sale;
+  });
+
+  //Sepet Ara Toplam Bölümü Fiyatını ilk yüklemede getir
+  subTotal.innerText = subTotalPrice.toFixed(2);
+
+  //Ürün Toplam Bölümü Fiyatlarını ilk yüklemede getir
+  itemTotal.forEach((item) => {
+    subTotalPrice += parseFloat(item.innerText);
+    subTotal.innerText = subTotalPrice.toFixed(2);
+  });
+
+  //Toplam Bölümü Fiyatlarını ilk yüklemede getir
+  vat.innerText = (subTotalPrice * 0.18).toFixed(2);
+  shipping.innerText = (subTotalPrice * 0.1).toFixed(2);
+  sum.innerText = (subTotalPrice * 1.28).toFixed(2);
+}
 
 //!Event Listeners
 
@@ -169,25 +215,4 @@ removeBtn.forEach((btn, index) => {
 
 //!Sayfa her yüklendiğinde gelen varsayılan değerler 
 
-//İlk yüklemede ürün bazlı değerler
-document.addEventListener("DOMContentLoaded", () => {
-
-  //Ürün bazlı Toplam fiyatları ilk yüklemede getir
-  itemTotal.forEach((item, index) => {
-    item.innerText = cartItems[index].sale;
-  });
-
-  //Sepet Ara Toplam Bölümü Fiyatını ilk yüklemede getir
-  subTotal.innerText = subTotalPrice.toFixed(2);
-
-  //Ürün Toplam Bölümü Fiyatlarını ilk yüklemede getir
-  itemTotal.forEach((item) => {
-    subTotalPrice += parseFloat(item.innerText);
-    subTotal.innerText = subTotalPrice.toFixed(2);
-  });
-
-  //Toplam Bölümü Fiyatlarını ilk yüklemede getir
-  vat.innerText = (subTotalPrice * 0.18).toFixed(2);
-  shipping.innerText = (subTotalPrice * 0.1).toFixed(2);
-  sum.innerText = (subTotalPrice * 1.28).toFixed(2);
-});
+document.addEventListener("DOMContentLoaded", dummyDataHandler);
