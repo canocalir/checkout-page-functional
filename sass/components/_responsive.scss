@@ -14,16 +14,23 @@
       }
       .right-container {
         width: 100%;
-        .cart-item {
+        .loader{
           width: 30vw;
+        }
+        .cart-item {
+          width: 60vw;
           img {
             @include Image(30vw);
+            height: 40vw;
           }
           .price {
             .counter {
-              width: 100%;
+              width: 80%;
             }
           }
+          .remove {
+            width: 5rem;
+        }
         }
       }
     }
@@ -45,10 +52,14 @@
       }
       .right-container {
         width: 100%;
+        .loader{
+          width: 30vw;
+        }
         .cart-item {
           width: 30vw;
           img {
-            @include Image(30vw);
+            @include Image(20vw);
+            height: 20vw;
           }
           .price {
             .counter {
@@ -80,12 +91,16 @@
           width: 50vw;
           img {
             @include Image(20vw);
+            height: 20vw;
           }
           .price {
             .counter {
-              width: 100%;
+              width: 80%;
             }
           }
+          .remove {
+            width: 7rem;
+        }
         }
       }
     }
@@ -108,17 +123,24 @@
       .right-container {
         display: flex;
         width: 35%;
+        .loader{
+          width: 20vw;
+        }
         .cart-item {
           width: 30vw;
           gap: 1rem;
           img {
-            @include Image(10vw);
+            @include Image(9vw);
+            height: 10vw;
           }
           .price {
             .counter {
-              width: 100%;
+              width: 80%;
             }
           }
+          .remove {
+            width: 7rem;
+        }
         }
       }
     }
@@ -140,17 +162,24 @@
       .right-container {
         display: flex;
         width: 30%;
+        .loader{
+          width: 20vw;
+        }
         .cart-item {
           width: 100%;
           gap: 1rem;
           img {
-            @include Image(10vw);
+            @include Image(9vw);
+            height: 10vw;
           }
           .price {
             .counter {
               width: 6vw;
             }
           }
+          .remove {
+            width: 7rem;
+        }
         }
       }
     }
