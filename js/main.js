@@ -134,14 +134,17 @@ const minusButtonHandler = (i) => {
 //!Silme Butonu Fonksiyonu
 
 const removeButtonHandler = (i) => {
-  
   //Ürünü 200ms gecikmeyle sil
   setTimeout(() => {
     cartItem[i].remove();
   }, 200);
 
+  //Sepet Toplam Fiyatlarını Güncelle
+  subTotalPrice -= (cartItems[i].sale * numberCount[i].innerHTML);
+  calculateSubTotalTaxShipping();
+
   //Sepet Toplam Bölümü Fiyatlarını Güncelle
-  calculateNegativePrices(i)
+  calculatePricesHandler(i);
 };
 
 //!Boş Sepet Uyarısı Fonksiyonu
